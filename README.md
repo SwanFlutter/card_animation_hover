@@ -58,7 +58,7 @@ This class is a StatefulWidget that displays a card with a hover animation effec
 
 ```yaml
 dependencies:
-  card_animation_hover: ^0.0.1
+  card_animation_hover: ^0.0.2
 ```
 
 

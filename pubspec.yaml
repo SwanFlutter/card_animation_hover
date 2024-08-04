@@ -1,6 +1,6 @@
 name: card_animation_hover
 description: "This class is a StatefulWidget that displays a card with a hover animation effect."
-version: 0.0.1
+version: 0.0.2
 homepage: "https://github.com/SwanFlutter/card_animation_hover"
 
 environment:
