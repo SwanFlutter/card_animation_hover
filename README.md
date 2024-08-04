@@ -16,7 +16,12 @@ know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+
+
+![card_animation](https://github.com/user-attachments/assets/d7af5666-8472-4cfb-a8f3-d577f92cfbe1)
+
+
+
 
 ## Getting started
 
