@@ -36,9 +36,9 @@ This class is a StatefulWidget that displays a card with a hover animation effec
   final List<Map<String, String>> cards = [
   for (int index = 0; index < imageUrls.length; index++) ...[
     {
-      'image': imageUrls[index],
-      'header': 'Canyons',
-      'content': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+      'image': imageUrls[index], /// required image
+      'header': 'Canyons', /// required header
+      'content': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', /// required content
     },
     {
       'image': imageUrls[index],
@@ -56,20 +56,24 @@ This class is a StatefulWidget that displays a card with a hover animation effec
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  card_animation_hover: ^0.0.1
+```
+
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+import 'package:card_animation_hover/card_animation_hover.dart';
+
 ```
+
+
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+If you have any issues, questions, or suggestions related to this package, please feel free to contact us at [swan.dev1993@gmail.com](mailto:swan.dev1993@gmail.com). We welcome your feedback and will do our best to address any problems or provide assistance.
+For more information about this package, you can also visit our [GitHub repository](https://github.com/SwanFlutter/card_animation_hover) where you can find additional resources, contribute to the package's development, and file issues or bug reports. We appreciate your contributions and feedback, and we aim to make this package as useful as possible for our users.
+Thank you for using our package, and we look forward to hearing from you!

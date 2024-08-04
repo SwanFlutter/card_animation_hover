@@ -6,13 +6,64 @@ import 'dart:math';
 import 'package:card_animation_hover/src/widget/card-widget.dart';
 import 'package:flutter/material.dart';
 
+/// A widget that displays a card with hover animation.
+///
+/// Example:
+///
+/// ```dart
+/// CardAnimationHover(
+///   card: {
+///     image': imageUrls[index],
+///      'header': 'Canyons',
+///     'content': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+///   },
+///   onTap: () {
+///     navigator.push('/canyons');
+///   },
+///   showAnimation: true,
+///   height: 320.0,
+///   width: 240.0,
+/// )
+/// ```
+///
+/// [card]: A map containing the card data (e.g., image, header, content,). It is required.
+///
+/// [onTap]: A callback function that is triggered when the card is tapped. It is optional.
+///
+/// [showAnimation]: A boolean value to enable or disable the hover animation. Defaults to `true`.
+///
+/// [height]: The height of the card. Defaults to `320.0`.
+///
+/// [width]: The width of the card. Defaults to `240.0`.
+///
+/// [CardAnimationHover] is a widget that animates a card when hovered over, providing an interactive 3D tilt effect. It is useful for web and desktop applications built with Flutter.
 class CardAnimationHover extends StatefulWidget {
+  /// A map containing the card data (e.g., title, subtitle, etc.).
   final Map<String, String> card;
+
+  /// A callback function that is triggered when the card is tapped.
   final void Function()? onTap;
+
+  /// A boolean value to enable or disable the hover animation.
   final bool showAnimation;
 
-  const CardAnimationHover(
-      {super.key, required this.card, this.onTap, this.showAnimation = true});
+  /// The height of the card.
+  final double height;
+
+  /// The width of the card.
+  final double width;
+
+  /// Creates a [CardAnimationHover] widget.
+  ///
+  /// The [card] parameter is required. The [onTap], [showAnimation], [height], and [width] parameters are optional.
+  const CardAnimationHover({
+    super.key,
+    required this.card,
+    this.onTap,
+    this.showAnimation = true,
+    this.height = 320.0,
+    this.width = 240.0,
+  });
 
   @override
   State<CardAnimationHover> createState() => _CardAnimationHoverState();
@@ -90,11 +141,20 @@ class _CardAnimationHoverState extends State<CardAnimationHover>
                       ..rotateX(_angleX * pi / 180)
                       ..rotateY(_angleY * pi / 180),
                     alignment: FractionalOffset.center,
-                    child: CardWidget(card: widget.card, isHovered: _isHovered),
+                    child: CardWidget(
+                      card: widget.card,
+                      isHovered: _isHovered,
+                      widget: widget,
+                    ),
                   )
-                : CardWidget(card: widget.card, isHovered: _isHovered);
+                : CardWidget(
+                    card: widget.card, isHovered: _isHovered, widget: widget);
           },
-          child: CardWidget(card: widget.card, isHovered: _isHovered),
+          child: CardWidget(
+            card: widget.card,
+            isHovered: _isHovered,
+            widget: widget,
+          ),
         ),
       ),
     );

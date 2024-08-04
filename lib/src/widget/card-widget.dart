@@ -1,18 +1,29 @@
 // ignore_for_file: file_names
 
+import 'package:card_animation_hover/card_animation_hover.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
+  /// [widget]: A widget that displays a card with hover animation.
+  final CardAnimationHover widget;
+
+  /// [card]: A map containing the card data (e.g., image, header, content,). It is required.
   final Map<String, String> card;
+
+  ///  [isHovered]: A boolean value to check if the card is hovered.
   final bool isHovered;
 
-  const CardWidget({super.key, required this.card, required this.isHovered});
+  const CardWidget(
+      {super.key,
+      required this.widget,
+      required this.card,
+      required this.isHovered});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 240.0,
-      height: 320.0,
+      width: widget.width,
+      height: widget.height,
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(10.0),
